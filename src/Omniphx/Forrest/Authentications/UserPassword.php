@@ -58,6 +58,15 @@ class UserPassword extends BaseAuthentication implements UserPasswordInterface
         return $authTokenDecoded;
     }
 
+     /**
+     * Return current auth session information.
+     *
+     * @return mixed $response
+     */ 
+    public function token() {
+	    return $this->tokenRepo->get();
+    }
+
     /**
      * Revokes access token from Salesforce. Will not flush token from storage.
      *

@@ -399,7 +399,7 @@ abstract class Client implements AuthenticationInterface
     public function identity($options = [])
     {
         $token = $this->tokenRepo->get();
-        $url = $token['id'];
+        $url = $token['id']. "?version=latest";
         $accessToken = $token['access_token'];
         $tokenType = $token['token_type'];
 
